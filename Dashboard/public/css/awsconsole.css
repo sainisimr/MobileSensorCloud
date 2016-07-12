@@ -1,0 +1,249 @@
+body {
+    background-color: #18bc9c;
+    padding: 0;
+    font-family: "Helvetica";
+    margin-bottom: 10px;
+}
+
+progress {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+paper-progress {
+    position: relative;
+    width: 100%;
+    height: 3em;
+}
+
+#plot_area {
+    width: 100%;
+}
+
+
+
+#plot_0 {
+  height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px black;
+}
+
+#plot_1 {
+  height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px #0D5E4E;
+
+}
+
+#plot_2 {
+    height: 400px;
+    margin-bottom: 2em;
+}
+
+#plot_3 {
+    height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px black;
+}
+
+#plot_4 {
+    height: 400px;
+    margin-bottom: 2em;
+}
+
+#plot_5 {
+    height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px #0D5E4E;
+}
+
+#plot_6 {
+    height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px black;
+}
+
+#plot_7 {
+    height: 400px;
+    margin-bottom: 2em;
+    box-shadow: 0 0 30px #0D5E4E;
+}
+
+.plot {
+    position: relative;
+    width: 95%;
+    height: 700px;
+    margin-bottom: 3em;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+.slides {
+    display: none;
+}
+
+.filter {
+    color: #aaa;
+    background-color: #666;
+    border: 1px solid #aaa;
+    padding: 0.5em;
+    width: 15em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#plotButton {
+    display: none;
+    width: 9em;
+}
+
+#optionButton {
+    display: none;
+    width: 6em;
+}
+
+#filterAll {
+    width: 9em;
+}
+
+#filterNone {
+    width: 9em;
+}
+
+#optionDialog {
+    width: 75%;
+}
+
+#option_0 {
+    display: block;
+}
+
+#timespan {
+    width: 4em;
+}
+
+#resolution {
+    width: 4em;
+}
+
+
+
+
+
+
+.navbar-inverse {
+    border-color: transparent
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fed136;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:active, .navbar-inverse .navbar-brand.active {
+    color: #fec503
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: rgba(255, 255, 255, .02)
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #fed136;
+    border-color: #fed136
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #fff
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #fed136
+}
+
+.navbar-inverse .nav li a {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff
+}
+
+.navbar-inverse .nav li a:hover, .navbar-inverse .nav li a:focus {
+    color: #fed136;
+    outline: 0
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #fed136
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #fec503
+}
+
+
+
+
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}

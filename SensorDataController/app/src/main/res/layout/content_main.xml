@@ -1,0 +1,223 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="60dp">
+
+
+    <TextView
+        android:id="@+id/tvSensorData"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Sensor Data"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvSensorData"/>
+
+    <TextView
+        android:id="@+id/tvLocationResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvLocation"
+        android:textSize="20sp"
+        android:gravity="center"
+
+        android:layout_alignTop="@id/tvLocation"/>
+
+
+
+    <TextView
+        android:id="@+id/tvLatitude"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        android:textSize="20sp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvLocation"/>
+
+    <TextView
+        android:id="@+id/tvLatitudeResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvLatitude"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_alignTop="@id/tvLatitude"/>
+
+
+
+    <TextView
+        android:id="@+id/tvLongitude"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        android:textSize="20sp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvLatitude"/>
+
+    <TextView
+        android:id="@+id/tvLongitudeResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvLongitude"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_alignTop="@id/tvLongitude"/>
+
+
+
+
+    <TextView
+        android:id="@+id/tvOzone"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Ozone"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:layout_below="@+id/tvLongitude"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvOzoneResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvOzone"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@+id/tvLocationResult"
+        android:layout_alignTop="@id/tvOzone"/>
+
+
+
+    <TextView
+        android:id="@+id/tvPPM"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="PPM"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvOzone"/>
+
+    <TextView
+        android:id="@+id/tvPPMResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvPPM"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@+id/tvOzoneResult"
+        android:layout_alignTop="@id/tvPPM"/>
+
+
+
+    <TextView
+        android:id="@+id/tvCO"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="CO"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@id/tvPPM"/>
+
+    <TextView
+        android:id="@+id/tvCOResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvCO"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@id/tvPPMResult"
+        android:layout_alignTop="@id/tvCO"/>
+
+
+
+    <TextView
+        android:id="@+id/tvSO2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SO2"
+        android:textSize="20sp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@id/tvCO"/>
+
+    <TextView
+        android:id="@+id/tvSO2Result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvSO2"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@id/tvCOResult"
+        android:layout_alignTop="@id/tvSO2"/>
+
+
+    <TextView
+        android:id="@+id/tvN2O"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="N2O"
+        android:textSize="20sp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@id/tvSO2"/>
+
+    <TextView
+        android:id="@+id/tvN2OResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tvN2O"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:layout_below="@id/tvCOResult"
+        android:layout_alignTop="@id/tvN2O"/>
+
+    <Button
+        android:id="@+id/tvPost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="POST"
+        android:layout_below="@id/tvSO2"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"/>
+</RelativeLayout> 

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/freelancer.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+var sensorID=[];
+sensorID=<%= data[0].Sensor_Id %>;
+var ozone=[];
+var ppm=[];
+var co=[];
+var so2=[];
+var n2o=[];
+
+Array.prototype.max = function() {
+  return Math.max.apply(null, this);
+};
+
+Array.prototype.min = function() {
+  return Math.min.apply(null, this);
+};
+
+ <% for (var d=0;d<data.length;d++){%>
+ ozone.push(<%= data[d].Ozone%>);
+ ppm.push(<%= data[d].PPM %>);
+ n2o.push(<%= data[d].N2O %>);
+ co.push(<%= data[d].CO %>);
+ so2.push(<%= data[d].SO2 %>);
+ <%}%>
+$(function () {
+
+    $('#container1').highcharts({
+        
+        title: {
+            text: 'Sensor Data'
+        },
+        xAxis: {
+        
+        	title: {
+                text: 'Timestamp',
+                
+            },
+            categories: sensorID,
+        },
+        yAxis: {
+        	min: 20,
+            max: 120,
+            tickInterval: 15,
+            lineColor: '#FF0000',
+            lineWidth: 1,
+        	
+            title: {
+                text: 'Concentration (mg/m3)',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        series: [{
+            name: 'Ozone',
+            data: ozone
+        },
+        {
+        	name: 'PPM',
+            data: ppm
+        },
+        {
+            name: 'N2O',
+            data: n2o
+        },
+        {
+            name: 'CO',
+            data: co
+        },
+        {
+            name: 'SO2',
+            data: so2
+        }]
+    });
+});
+
+/*$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Stacked column chart'
+        },
+        xAxis: {
+            categories: sensorID
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total fruit consumption'
+            },
+            stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x}</b><br/>',
+            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+         series: [{
+            name: 'Ozone',
+            data: ozone
+        },
+        {
+        	name: 'PPM',
+            data: ppm
+        },
+        {
+            name: 'N2O',
+            data: n2o
+        },
+        {
+            name: 'CO',
+            data: co
+        },
+        {
+            name: 'SO2',
+            data: so2
+        }]
+    });
+});*/
+
+
+
+$(function () {
+
+    $('#container').highcharts({
+
+        chart: {
+            type: 'columnrange',
+            inverted: true
+        },
+
+        title: {
+            text: 'Pollution variation over the Time'
+        },
+
+        
+        xAxis: {
+        
+        	
+            categories: ['Ozone', 'PPM', 'N2O', 'CO', 'SO2']
+        },
+
+        yAxis: {
+            title: {
+                text: 'Concentration (mg/m3)'
+            }
+        },
+
+        tooltip: {
+            valueSuffix: ' mg/m3'
+        },
+
+        plotOptions: {
+            columnrange: {
+                dataLabels: {
+                    enabled: true,
+                    formatter: function () {
+                        return this.y + 'mg/m3';
+                    }
+                }
+            }
+        },
+
+        legend: {
+            enabled: false
+        },
+
+        series: [{
+            name: 'Concentration',
+            data: [
+                [ozone.max(), ozone.min()],
+                [ppm.max(), ppm.min()],
+                [n2o.max(), n2o.min()],
+                [co.max(), co.min()],
+                [so2.max(), so2.min()]
+               
+            ]
+        }]
+
+    });
+
+});
+
+
+</script>
+</head>
+<body id="page-top" class="index" style="background:#18bc9c;">
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/user_user'>  User Profile  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/user_userbillingplan'> Billing Plan Information  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/user_sensordatainformation'>  Sensor Data  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/user_billinginformation'>  Billing Information  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/signout'>  Signout  </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<br/><br/><br/><br/><br/>
+</div>
+<div  style="color:white;margin-left:128px;"><H2>Sensor Data Information<H2></div>
+</br>
+<div  style="color:white;margin-left:128px;"><H3>Graphical Information</H3></div>
+<div id="container1" style="height: 300px"></div>
+<div id="container" style="height: 300px"></div>
+
+<div  style="color:white;margin-left:128px;"><H3>Tabular Information</H3></div>
+<div style="color:white;margin-left:58px;">
+<form style="margin: 4px 4px 4px 4px;" method="get" action="/vendor_editcontroller" id="form1" >  
+<table class="container" style="border:1px solid white;">
+<tr style="background-color:#2c3e50; border: 1px solid white;">
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">Timestamp</th>
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">Ozone</th>
+<th style="border: 1px solid white;padding:4px 10px 4px 10px;"> PPM</th>
+<th style="border: 1px solid white;padding:4px 10px 4px 10px;">SO2</th>
+<th style="border: 1px solid white;padding:4px 10px 4px 10px;">N2O</th>
+<th style="border: 1px solid white;padding:4px 10px 4px 10px;">CO</th>
+</tr>  
+ <% for(var i in data) 
+	            { 
+var d = data[i].timeStamp;
+var s =  (new Date(d)).toLocaleDateString() + " - "+ (new Date(d)).getHours() + ": " + (new Date(d)).getMinutes() + " : " + (new Date(d)).getSeconds();   
+            %>
+            <tr style="background-color:#2c3e50; border: 1px solid white;">
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					 <%=s %> <br/>  
+ </td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					 <%= data[i].Ozone %> <br/>  
+ </td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					<%= data[i].PPM %> <br/>  
+ </td>
+<td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					<%= data[i].SO2 %> <br/>  
+ </td>
+ <td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					 <%= data[i].N2O %> <br/> 
+ </td>
+ <td style="border: 1px solid white;padding:4px 10px 4px 10px;">
+					 <%= data[i].CO %> <br/> 
+ </td>
+</tr>
+<% 
+	            }  
+	       %>
+</table>
+</form>
+</div>
+<br/><br/><br/>
+</body>
+</html>

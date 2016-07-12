@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/freelancer.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script type="text/javascript">
+    	function go(action)
+    	{
+    		$('form#form1').attr('action',action);
+    		$('form#form1').submit();
+    	}
+    </script> 
+</head>
+
+<body id="page-top" class="index" style="background:#18bc9c;">
+<nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Environment Tracker</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_vendor'>  Vendor </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                                              <a href="/vendor_controller">  Controller  </a>
+                                            </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/vendor_sensor'>  Sensor Information  </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
+
+   <center><div style="width:400px; height:250px; border: solid white 2px;">
+   <form style="margin: 4px 4px 4px 4px;" method="get" action="/vendor_addcontrollerinsert" id="form1" >  
+   		<div><H1>Login<H1></div>
+   		
+   		 <% for(var i=1 in data) 
+   		 	            {                     
+   		             %>
+   		 		<div style="text-align: left;">
+   		 		<label >Number Of Devices</label>
+   		 		<input style="margin-left:5px; width:232px; " type="text" name="numberofdevices" value=<%= data[i].numberofdevices%> />
+   		 		</div>
+   		 		<div style="text-align: left;">
+   		 		<label >Status:</label>
+   		 		<input style="margin-left:90px;width:232px;" type="text" name="status" value=<%= data[i].status%> />
+   		 		</div>
+   		 		<div style="text-align: left;">
+   		 		<label >Billing Plan Id:</label>
+   		 		<input style="margin-left:40px; width:232px;" type="text" name="billingplanid" value=<%= data[i].billinginformation_billingid_primarykey%> />
+   		 		</div>
+   		 	    <div >
+   		 	    <button type="button" style="width:100px;" onclick="go('/vendor_editcontrollerupdate');" >Update</button> 
+   		 	    <button type="button" style="width:100px;" onclick="go('/vendor_controller');" >Cancel</button> 
+   		 	    </div>
+   		 	    <%}%>
+		</form>
+		</div>
+		</center>
+</body>
+</html>

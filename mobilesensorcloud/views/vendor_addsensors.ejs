@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/freelancer.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">
+    	function go(action)
+    	{
+    		$('form#form1').attr('action',action);
+    		$('form#form1').submit();
+    	}
+    </script> 
+</head>
+
+<body id="page-top" class="index" style="background:#18bc9c;">
+<nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_vendor'>  Vendor </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                                              <a href="/vendor_controller">  Controller  </a>
+                                            </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/vendor_sensor'>  Sensor Information  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/signout'>  Signout  </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/></div>
+<div class="container" style="color:white;margin-left:58px;">
+   <center><div style="width:400px; height:300px; border: solid white 2px;background-color:#2c3e50;">
+   <form style="background-color:#2c3e50;" method="get" action="/vendor_addsensorinsert" id="form1" >  
+   		<div><H1>Add Sensors<H1></div>
+   		    		<div style="text-align: left;margin-left:4px;">
+   		 		<label >Name</label>
+   		 		<input style="margin-left:48px; color:black;width:250px; " type="text" name="name" />
+   		 		</div>
+   		 		<div style="text-align: left;margin-left:4px;">
+   		 		<label >Controller id</label>
+   		 		<input style="margin-left:4px;color:black; width:250px; " type="text" name="controllerid" />
+   		 		</div>
+   		 		<div style="text-align: left;margin-left:4px;">
+   		 		<label >Location</label>
+   		 		<input style="margin-left:31px;width:250px;color:black;" type="text" name="location" />
+   		 		</div>
+   		 		<div style="text-align: left;margin-left:4px;">
+   		 		<label >Sensor Type</label>
+   		 		<input style="margin-left:7px; width:250px;color:black; " type="text" name="type" />
+   		 		</div>
+   		 		<div style="text-align: left;margin-left:4px;">
+   		 		<label >Status:</label>
+   		 		<input style="margin-left:43px; width:250px;color:black; " type="text" name="status"/>
+   		 		</div>
+   		 	    <div >
+   		 	    <button type="button" style="width:100px;color:black;" onclick="go('/vendor_addsensorinsert');" >Insert</button> 
+   		 	    <button type="button" style="width:100px;color:black;" onclick="go('/vendor_sensor');" >Cancel</button> 
+   		 	    </div>
+		</form>
+		</div>
+		</center>
+</body>
+</html>

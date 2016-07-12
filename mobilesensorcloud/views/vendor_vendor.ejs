@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/freelancer.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+<body id="page-top" class="index" style="background:#18bc9c;">
+<nav class="navbar navbar-default navbar-fixed-top">
+
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <!-- <a class="navbar-brand" href="#page-top">Environment Tracker</a>-->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#"></a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_vendor'>  Vendor </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                        <a href='/vendor_billingplan'> Billing Plan Information </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                                              <a href="/vendor_controller">  Controller  </a>
+                                            </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/vendor_sensor'>  Sensor Information  </a>
+                    </li>
+                    <li class="page-scroll" style="font-size:20px;">
+                    <a href='/signout'>  Signout  </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<br/><br/><br/><br/><br/>
+<br/>
+<div style="color:white;margin-left:110px;"><H2>VENDOR PROFILE DETAILS</H2></div>
+<div class="container" style="color:white;margin-left:108px;">
+<table class="table table-hover" style="border:1px solid white;">
+ 
+<tr style="background-color:#2c3e50; border: 1px solid white;">
+
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">First Name</th>
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">Last Name</th>
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">EmailId</th>
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">Mobile</th>
+<th style="border: 1px solid white; padding:4px 10px 4px 10px;">Security</th>
+</tr>
+
+	       <% for(var i=2 in data) 
+	            {                     
+            %><tr>
+            	<td style="background-color:#2c3e50; border: 1px solid white;"><p><%= data[i].firstname %></p></td>
+            		<td style="background-color:#2c3e50; border: 1px solid white;"><p><%= data[i].lastname %></p></td>
+           		    <td style="background-color:#2c3e50; border: 1px solid white;"><p><%= data[i].email %></p></td>
+            		<td style="background-color:#2c3e50; border: 1px solid white;"><p><%= data[i].mobile %></p></td>
+            		<td style="background-color:#2c3e50; border: 1px solid white;"><p><%= data[i].securityques %></p></td>
+            		<br>  </tr>     
+           <% 
+	            }  
+	       %>
+
+
+</table></div>
+</body>
+</html>

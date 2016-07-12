@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>Signup</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+	<link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/css/freelancer.css" rel="stylesheet">
+	<link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+ <body id="page-top" class="index" style="background:#18bc9c;">
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+           <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Air Quality Monitoring</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/user_signup">Registeration</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<header><div class="container">
+<div style="border: solid #2c3e50 2px;float:left; width:62%; height:547px; background:#2c3e50;"><img  style="width:100%; height:543px;" src="/stylesheets/mobile_sensor_cloud.jpg" />
+ </div>
+ <div style="width:auto; height:auto; border: solid #2c3e50 4px; background:#2c3e50; float:right; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif; ">  
+   		
+<h1 align="center">New Registration</h1><br>
+<h4>Enter Your Details to Signup</h4>
+
+<form method="post" action="/user_signupdetail">
+<label>Username</label> <input style="margin-left:5px;color:black;width:250px;" type="email" name="emailid"></b><br>
+<br>Password <input style="margin-left:9px;color:black;width:250px;" type="password" name="password"></b><br>
+<br>First Name <input style="margin-left:5px;color:black;width:250px;" type="text" name="firstname"></b><br>
+<br>Last name <input style="margin-left:10px;color:black;width:250px;" type="text" name="lastname"></b><br>
+<br>Mobile <input style="margin-left:31px;color:black;width:250px;" style="margin-left:5px;color:black;" type="text" name="mobile"></b><br>
+<h3>Type of User</h3>
+Vendor &nbsp<input style="margin-left:5px;color:black;" type="radio" name="typeofuser" value="vendor"> &nbsp 
+User &nbsp<input  type="radio" name="typeofuser" value="user"><br/>
+<br>Security <input style="margin-left:25px;color:black;width:250px;" type="text" name="securityques"><br/><br/>
+<input style="color:black; width:150pxwidth:250px;" type="submit" name="submit"><br>
+</form></div></header>
+</body>
+ 
+</html>
